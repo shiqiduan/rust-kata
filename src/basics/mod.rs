@@ -1,3 +1,4 @@
+mod collecton;
 mod compound_types;
 mod flow_control;
 mod function;
