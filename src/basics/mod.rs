@@ -1,5 +1,6 @@
 mod collecton;
 mod compound_types;
+mod crate_module;
 mod flow_control;
 mod function;
 mod generics_trait;
