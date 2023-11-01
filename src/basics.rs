@@ -5,6 +5,7 @@ mod crate_module;
 mod flow_control;
 mod function;
 mod generics_trait;
+mod lifetime;
 mod method;
 mod ownership_borrowing;
 mod pattern_match;
