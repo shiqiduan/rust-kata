@@ -2,6 +2,8 @@
 
 // Vector - 只能存储相同类型的值。不同类型的可以使用枚举或者特征对象？
 
+// HashMap
+
 use std::collections::HashMap;
 
 fn vector_demo() {
@@ -87,6 +89,12 @@ fn vector_sort() {
 }
 
 // HashMap
+// 哪些类型可以作为 key？
+#[derive(Hash, Eq, PartialEq)]
+struct MyKey {
+    id: u32,
+    name: String,
+}
 
 fn hashmap_demo_01() {
     let mut map = HashMap::new();
@@ -120,11 +128,25 @@ fn hashmap_demo_02() {
     println!("{:?}", map);
 }
 
+fn hashmap_demo_03() {
+    let mut map = HashMap::new();
+
+    let mut key = String::from("key");
+    // 关键是这里，clone 进入了。不存在，key 会变的问题。
+    map.insert(key.clone(), 123);
+
+    key.push_str("abc");
+    match map.get(&key) {
+        Some(x) => println!("{x}"),
+        None => println!("None"),
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use crate::basics::collecton::{
-        hashmap_demo_01, hashmap_demo_02, vector_demo, vector_demo_01, vector_demo_02,
-        vector_demo_03, vector_sort,
+        hashmap_demo_01, hashmap_demo_02, hashmap_demo_03, vector_demo, vector_demo_01,
+        vector_demo_02, vector_demo_03, vector_sort,
     };
 
     #[test]
@@ -156,5 +178,6 @@ mod tests {
     fn test_hashmap() {
         hashmap_demo_01();
         hashmap_demo_02();
+        hashmap_demo_03();
     }
 }
