@@ -7,5 +7,6 @@ mod method;
 mod ownership_borrowing;
 mod pattern_match;
 pub mod primitive_types;
+mod return_panic;
 mod string_str;
 pub mod variable;
