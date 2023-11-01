@@ -13,3 +13,7 @@
 ## Crates
 * [Lib.rs](https://lib.rs/)
 * [crates.io](https://crates.io/)
+
+## 其他
+* 《Learn you a haskell for great good!》
+* 《Real world Haskell》
